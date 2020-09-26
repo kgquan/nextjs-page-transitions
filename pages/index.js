@@ -19,13 +19,21 @@ const fadeInUp = {
   }
 };
 
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+}
+
 const Index = props => (
   <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>
     <div className='container center'>
       <div className='title'>
         <h1>Select a protein</h1>
       </div>
-      <div className='product-row'>
+      <motion.div variants={stagger} className='product-row'>
         {props.products.map(product => (
           <Link
             key={product.id}
@@ -41,7 +49,7 @@ const Index = props => (
             </motion.div>
           </Link>
         ))}
-      </div>
+      </motion.div>
     </div>
   </motion.div>
 );
