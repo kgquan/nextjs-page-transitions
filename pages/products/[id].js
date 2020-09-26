@@ -31,14 +31,17 @@ const Product = props => (
   <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>
     <div className='fullscreen'>
       <div className='product'>
-        <div className='img'>
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className='img'>
           <motion.img 
             initial={{ x: 20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
             key={props.product.image} 
             src={props.product.image} />
-        </div>
+        </motion.div>
         <div className='product-details'>
           <motion.div variants={stagger} className='inner'>
             <Link href='/'>
