@@ -41,7 +41,13 @@ const Index = props => (
             as={`/products/${product.id}`}>
             <motion.div variants={fadeInUp} className='card'>
               <span className='category'>Protein</span>
-              <img key={product.image} src={product.image} width={250} />
+              <motion.img 
+                initial= {{ x: 60, opacity: 0 }}
+                animate= {{ x: 0, opacity: 1 }}
+                transition= {{ delay: 0.2 }}
+                key={product.image} 
+                src={product.image} 
+                width={250} />
               <div className='product-info'>
                 <h4>{product.name}</h4>
                 <span>{product.price}</span>
